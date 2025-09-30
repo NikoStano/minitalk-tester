@@ -10,20 +10,15 @@ cd minitalk-Tester
 
 ## Preparation and execution
 
-1. **Modifier le chemin du client** : 
-Edite la variable `PATH_TO_CLIENT` si besoin.
-2. **Compiler ton projet** : 
-	`client` et `server`.
-3. **Lancer ton serveur** : 
-	`./server`
-4. **Exécuter les tests** : 
-Utilise le Makefile comme ci-dessous
-				👇
+1. **Modifier le chemin du client** : Edite la variable `PATH_TO_CLIENT` si besoin.
+2. **Compiler ton projet** : `client` et `server`.
+3. **Lancer ton serveur** : `./server`
+4. **Exécuter les tests** : Utilise le Makefile comme ci-dessous👇
 
 ## Usage
 
 ```bash
-make [test] [PID]
+**make [test] [PID]**
 ```
 
 ### Tests disponibles :
