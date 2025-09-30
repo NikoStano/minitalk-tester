@@ -48,6 +48,3 @@ make bonus `PID`
 # Tous les tests
 make test `PID`
 ```
-
-**Note :** Remplace `12345` par le PID de ton serveur.
-```
