@@ -2,20 +2,19 @@
 
 ## Installation
 
-## Preparation and execution
+### Preparation and execution :
 
 1. **Compiler ton projet** : `client` et `server`.
 2. **Lancer ton serveur** : `./server`
 3. **Exécuter les tests** : 👇👇👇
 
-## Dans ton projet
+### Dans ton projet :
 ```bash
 git clone https://github.com/NikoStano/minitalk-tester.git
 cd minitalk-tester
 ```
 
-## Usage
-
+### Usage :
 ```bash
 make [test] [PID]
 ```
