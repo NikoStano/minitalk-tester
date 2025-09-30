@@ -2,7 +2,7 @@
 
 ## Installation
 
-`IN YOU'R PROJECT DIRECTORY`
+**IN YOU'R PROJECT DIRECTORY**
 ```bash
 git clone https://github.com/NikoStano/minitalk-Tester.git
 cd minitalk-Tester
@@ -18,7 +18,7 @@ cd minitalk-Tester
 ## Usage
 
 ```bash
-**make [test] [PID]**
+make [test] [PID]
 ```
 
 ### Tests disponibles :
