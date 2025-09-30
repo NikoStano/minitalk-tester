@@ -2,10 +2,10 @@
 
 ## Installation
 
-**IN YOU'R PROJECT DIRECTORY**
+## Dans ton projet
 ```bash
-git clone https://github.com/NikoStano/minitalk-Tester.git
-cd minitalk-Tester
+git clone https://github.com/NikoStano/minitalk-tester.git
+cd minitalk-tester
 ```
 
 ## Preparation and execution
