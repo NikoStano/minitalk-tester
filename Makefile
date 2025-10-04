@@ -28,8 +28,8 @@ NC = \033[0m
 all: help
 
 help:
-	@echo "$(L_GREEN)=== Minitalk Tester ===$(NC)"
-	@echo "$(L_BLUE)Tests disponibles:$(NC)"
+	@echo "$(L_GREEN)>>> Minitalk Tester <<<$(NC)"
+	@echo "$(L_BLUE)Tests :$(NC)"
 	@echo "$(WHITE)---------------------------------------------------$(NC)"
 	@echo "$(WHITE)|$(NC) $(YELLOW)mandatory $(NC)  $(WHITE)- Tous les tests obligatoires       |$(NC)"
 	@echo "$(WHITE)|$(NC) $(YELLOW)  bonus$(NC)     $(WHITE)- Tous les tests bonus              |$(NC)"
@@ -100,7 +100,7 @@ bonus: check_pid test5 test6
 	@echo "\n$(YELLOW)Tests bonus terminés !$(NC)"
 
 test: check_pid speed mandatory bonus
-	@echo "\n$(L_GREEN)Si tout s'est affiché correctement sur votre terminal serveur: Parfait, bien joué ! 💪$(NC)"
+	@echo "\n$(L_GREEN)Test MANDATORY et BONUS passes$(NC)"
 
 %:
 	@:
