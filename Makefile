@@ -10,11 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-# Variables
-PATH_TO_CLIENT = ../client
+CLIENT = ../client
 PID = $(wordlist 2,2,$(MAKECMDGOALS))
 
-# Colors
 RED = \033[0;31m
 L_RED = \033[1;31m
 GREEN = \033[0;32m
@@ -45,7 +43,6 @@ help:
 	@echo "$(WHITE)Usage: $(NC)"
 	@echo "$(L_GREEN)>>>$(NC) $(WHITE)make <test> <PID>$(NC)$(L_GREEN) <<<$(NC)"
 
-
 check_pid:
 	@if [ -z "$(PID)" ]; then \
 		echo "$(RED)[ERROR] Veuillez spécifier le PID du serveur$(NC)"; \
@@ -57,42 +54,40 @@ check_pid:
 		exit 1; \
 	fi
 
-# Tests individuels
 speed: check_pid
 	@echo "$(L_BLUE) [Speed test]\tTemps pour print 1 000 char $(NC)"
-	@time $(PATH_TO_CLIENT) $(PID) "$$(cat assets/speed_test.txt)"
+	@time $(CLIENT) $(PID) "$$(cat assets/speed_test.txt)"
 
 test1: check_pid
 	@echo "$(L_BLUE) [Test 1]\tTest basic $(NC)"
-	@$(PATH_TO_CLIENT) $(PID) "Hello, this is a first test"
+	@$(CLIENT) $(PID) "Hello, this is a first test"
 
 test2: check_pid
 	@echo "$(L_BLUE) [Test 2]\tChaine vide$(NC)"
-	@$(PATH_TO_CLIENT) $(PID) ""
+	@$(CLIENT) $(PID) ""
 
 test3: check_pid
 	@echo "$(L_BLUE) [Test 3]\tEnvoi d'une chaine de 20 000 char$(NC)"
-	@$(PATH_TO_CLIENT) $(PID) "$$(cat assets/big_text.txt)"
+	@$(CLIENT) $(PID) "$$(cat assets/big_text.txt)"
 
 test4: check_pid
 	@echo "$(L_BLUE) [Test 4]\ttentative de crash Server-Client, envoie de chaine de 3 000 char (15 fois) $(NC)"
 	@for i in $$(seq 1 15); do \
 		echo -n "$(L_BLUE) [ $$i ]$(NC)"; \
-		$(PATH_TO_CLIENT) $(PID) "$$(cat assets/crash_test.txt)"; \
+		$(CLIENT) $(PID) "$$(cat assets/crash_test.txt)"; \
 	done
 
 test5: check_pid
 	@echo "$(L_BLUE) [Test 5]\tEmojis$(NC)"
-	@$(PATH_TO_CLIENT) $(PID) "$$(cat assets/emojis.txt)"
+	@$(CLIENT) $(PID) "$$(cat assets/emojis.txt)"
 
 test6: check_pid
 	@echo "$(L_BLUE) [Test 6]\tTest de connection server-client, envoie de chaine de 5 300 char (10 fois)$(NC)"
 	@for i in $$(seq 1 10); do \
 		echo -n "$(L_BLUE) [ $$i ]$(NC)"; \
-		$(PATH_TO_CLIENT) $(PID) "$$(cat assets/ascii_art.txt)"; \
+		$(CLIENT) $(PID) "$$(cat assets/ascii_art.txt)"; \
 	done
 
-# Tests groupés
 mandatory: check_pid test1 test2 test3 test4
 	@echo "\n$(YELLOW)Tests obligatoires terminés !$(NC)"
 
